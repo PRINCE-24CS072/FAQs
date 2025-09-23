@@ -1,40 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQs</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Interactive Portal Modules — Collapsibles, Popups, Sliders</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="faq-container">
-        <h1>Frequently Asked Questions</h1>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    What is this website about?
-                </button>
-                <div class="faq-answer">
-                    This website provides answers to the most common questions dynamically.
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    How do I use the FAQ section?
-                </button>
-                <div class="faq-answer">
-                    Click on any question to reveal or hide the answer.
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" aria-expanded="false">
-                    Can I contribute my own questions?
-                </button>
-                <div class="faq-answer">
-                    Yes, you can contact us to suggest new questions for the FAQ.
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
-</body>
+<header class="nav" role="navigation" aria-label="Main navigation">
+<div class="brand">
+<div class="logo">IP</div>
+<div>
+<div style="font-weight:700">Interactive Portal</div>
+<div style="font-size:12px;color:var(--muted)">Collapsibles · Popups · Sliders</div>
+</div>
+</div>
+
+
+<div class="nav-actions">
+<button id="themeToggle" class="btn" aria-pressed="false" title="Toggle theme">🌓 Dark</button>
+<button id="collapseAll" class="btn" title="Collapse all widgets">☰ Collapse</button>
+</div>
+</header>
+
+
+<main class="container">
+<div class="grid">
+<section>
+<div class="card fade-in" id="faqs">
+<h2>Collapsible FAQs (Accordion)</h2>
+<p class="lead">Rendered from a static JSON dataset. Accessible keyboard controls included (Enter / Space / Arrow keys).</p>
+
+
+<div class="accordion" id="accordionRoot" role="tablist" aria-label="Frequently asked questions">
+<!-- JS will render FAQ items here -->
+</div>
+</div>
+
+
+<div style="height:18px"></div>
+
+
+<div class="card fade-in" id="events">
+<h2>Events (Slider + Popup)</h2>
+<p class="lead">Use the slider to preview events; click a card to open a detailed popup.</p>
+
+
+<div class="slider" id="eventSlider" aria-roledescription="carousel">
+<div class="slides" id="slidesTrack">
+<!-- slides injected by JS -->
+</div>
+<div class="slider-controls">
+<div class="dots" id="sliderDots" role="tablist"></div>
+<div>
+<button id="prevSlide" class="btn" aria-label="Previous slide">◀</button>
+<button id="nextSlide" class="btn" aria-label="Next slide">▶</button>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
