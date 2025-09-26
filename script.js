@@ -1,3 +1,4 @@
+// FAQ Collapsible Logic
 const answers = document.querySelectorAll('.answer');
 const questions = document.querySelectorAll('.question');
 
@@ -19,6 +20,7 @@ questions.forEach((question, idx) => {
 });
 
 
+// Dark/Light Mode Toggle
 const themeToggle = document.getElementById('themeToggle');
 function setTheme(dark) {
     if (dark) {
@@ -35,6 +37,7 @@ themeToggle.onclick = () => {
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) setTheme(true);
 
 
+// Notification Banner Logic
 const notificationBanner = document.getElementById('notificationBanner');
 const closeBanner = document.getElementById('closeBanner');
 function showBanner() {
@@ -47,6 +50,7 @@ window.addEventListener('DOMContentLoaded', showBanner);
 closeBanner.addEventListener('click', hideBanner);
 
 
+// Event Slider & Popup
 const events = [
     {
         title: "Hackathon 2025",
@@ -91,6 +95,7 @@ document.getElementById('nextEvent').onclick = () => {
 };
 
 
+// Popup Modal
 let modal = document.querySelector('.modal');
 if (!modal) {
     modal = document.createElement('div');

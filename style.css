@@ -20,13 +20,15 @@ body {
 	box-shadow: 0 2px 8px #0001;
 	border-radius: 0 0 12px 12px;
 	transition: background 0.3s, color 0.3s;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 }
-body.dark-mode .top-bar {
-	background: #232323 !important;
-	color: #eee !important;
-}
-body.dark-mode .top-bar h2 {
-	color: #fff !important;
+.top-bar h2 {
+	font-size: 1.7rem;
+	font-weight: 700;
+	color: #222;
+	letter-spacing: 1px;
 }
 .button-group .btn {
 	background: #0078d4;
@@ -233,12 +235,28 @@ footer {
 	font-size: 1.1rem;
 	box-shadow: 0 2px 8px #0002;
 	letter-spacing: 0.5px;
+	display: none;
+	animation: fadeInBanner 0.7s;
 }
-
-
+@keyframes fadeInBanner {
+	from { opacity: 0; transform: translateY(-20px);}
+	to { opacity: 1; transform: translateY(0);}
+}
 body.dark-mode {
 	background: #181818;
 	color: #eee;
+}
+body.dark-mode .top-bar {
+	background: #232323 !important;
+	color: #eee !important;
+}
+body.dark-mode .top-bar h2 {
+	color: #fff !important;
+}
+body.dark-mode .button-group .btn {
+	background: #444 !important;
+	color: #fff !important;
+	border: none;
 }
 body.dark-mode .container,
 body.dark-mode .questions.card,
